@@ -21,8 +21,21 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+  // playing with account controller
 .controller('AccountCtrl', function($scope) {
+  // toggle friend
   $scope.settings = {
     enableFriends: true
   };
+
+  // adding fixed list to test ionList and ionItem
+  $scope.list = [
+    { id: 1, title: 'Titre 1' },
+    { id: 2, title: 'Titre 2' },
+    { id: 3, title: 'Titre 3' },
+    { id: 4, title: 'Titre 4' },
+    { id: 5, title: 'Titre 5' },
+    { id: 6, title: 'Titre 6' },
+    { id: 7, title: 'Titre 7' }
+  ];
 });
