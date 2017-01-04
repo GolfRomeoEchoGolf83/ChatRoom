@@ -112,6 +112,12 @@ angular.module('starter.controllers', [])
         console.log('Merci de ne pas avoir mangé ce cône glacé!');
       });
     };
+
+    // print out platform info
+    $scope.info = {
+      platform: ionic.Platform.platform(),
+      version: ionic.Platform.version()
+    };
 });
 
 
