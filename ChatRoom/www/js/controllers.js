@@ -47,5 +47,71 @@ angular.module('starter.controllers', [])
     .then(function(modal) {
     $scope.loginModal = modal;
   });
+})
 
+  .controller('TestCtrl', function($scope, $ionicPopup) {
+    // Triggered on a button click, or some other target
+    $scope.showPopup = function() {
+      $scope.data = {};
+
+      // popup perso
+      var myPopup = $ionicPopup.show({
+        template: '<input type="password" ng-model="data.wifi">',
+        title: 'Saisir le mot de passe Wi-Fi',
+        scope: $scope,
+        buttons: [
+          { text: 'Annuler' },
+          {
+            text: '<b>Enregistrer</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              if (!$scope.data.wifi) {
+                //ne pas autoriser la fermeture si le mot de passe n'est pas saisi
+                e.preventDefault();
+              } else {
+                return $scope.data.wifi;
+              }
+            }
+          }
+        ]
+      });
+
+      myPopup.then(function(res) {
+        console.log('Saisi!', res);
+      });
+
+      $timeout(function() {
+        myPopup.close(); //fermeture de la popup après 3 secondes
+      }, 3000);
+    };
+
+    // popup de confirmations
+    $scope.showConfirm = function() {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Partir',
+        template: 'Etes-vous sûr de vouloir partir ?'
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('Vous êtes sûr');
+        } else {
+          console.log('Vous n\'êtes pas sûr');
+        }
+      });
+    };
+
+    // popup d'alerte
+    $scope.showAlert = function() {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Ne faites pas ça!',
+        template: 'C\'est mieux ainsi'
+      });
+
+      alertPopup.then(function(res) {
+        console.log('Merci de ne pas avoir mangé ce cône glacé!');
+      });
+    };
 });
+
+
