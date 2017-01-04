@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
 })
 
   // playing with account controller
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $ionicModal) {
   // toggle friend
   $scope.settings = {
     enableFriends: true
@@ -38,4 +38,14 @@ angular.module('starter.controllers', [])
     { id: 6, title: 'Titre 6' },
     { id: 7, title: 'Titre 7' }
   ];
+
+  // creating account view
+  $ionicModal.fromTemplateUrl('templates/login.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  })
+    .then(function(modal) {
+    $scope.loginModal = modal;
+  });
+
 });
