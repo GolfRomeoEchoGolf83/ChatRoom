@@ -30,13 +30,13 @@ angular.module('starter.controllers', [])
 
   // adding fixed list to test ionList and ionItem
   $scope.list = [
-    { id: 1, title: 'Titre 1' },
-    { id: 2, title: 'Titre 2' },
-    { id: 3, title: 'Titre 3' },
-    { id: 4, title: 'Titre 4' },
-    { id: 5, title: 'Titre 5' },
-    { id: 6, title: 'Titre 6' },
-    { id: 7, title: 'Titre 7' }
+    { id: 1, title: 'Titre 1', icon: 'ion-speakerphone' },
+    { id: 2, title: 'Titre 2', icon: 'ion-happy-outline' },
+    { id: 3, title: 'Titre 3', icon: 'ion-bowtie' },
+    { id: 4, title: 'Titre 4', icon: 'ion-android-bus'},
+    { id: 5, title: 'Titre 5', icon: 'ion-social-angular' },
+    { id: 6, title: 'Titre 6', icon: 'ion-social-freebsd-devil'},
+    { id: 7, title: 'Titre 7', icon: 'ion-social-github' }
   ];
 
   // creating account view
