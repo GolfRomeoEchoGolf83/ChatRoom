@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 
-  // adding fixed list to test ionList and ionItem
+  // adding fixed list to test ionList and ionItem as well as icons from ionicons.com
   $scope.list = [
     { id: 1, title: 'Titre 1', icon: 'ion-speakerphone' },
     { id: 2, title: 'Titre 2', icon: 'ion-happy-outline' },
